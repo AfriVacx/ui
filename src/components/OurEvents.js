@@ -18,7 +18,7 @@ function OurEvents() {
           <div className="current_body">
             <p>January 19</p>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
-            <p>
+            <p style={{ textAlign: "justify" }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
               assumenda quidem eos exercitationem iusto sunt quos fugiat sed
               tenetur eveniet. Asperiores suscipit alias expedita ullam

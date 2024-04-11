@@ -56,7 +56,7 @@ const Slide = () => {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            style={{ color: navBg ? "white" : "black" }}
+            style={{ color: navBg ? "black" : "black" }}
           >
             <i class="fas fa-bars"></i>
           </button>
@@ -190,7 +190,7 @@ const Slide = () => {
           </div>
         </div>
       </nav>
-      <section>
+      <section className="home">
         <div id="intro" class="bg-image vh-100">
           <Carousel
             autoPlay={true}
@@ -214,7 +214,7 @@ const Slide = () => {
                       icon={faScroll}
                       style={{ marginRight: "0.5rem" }}
                     />
-                    <a href="/signup">Join us now</a>
+                    <a href="/signup">Join now</a>
                   </button>
                 </div>
                 <div className="socials">
@@ -235,7 +235,7 @@ const Slide = () => {
                   </a>
                 </div>
               </div>
-              <div className="slide_image">
+              <div className="slide_imag">
                 <img src={Slide1} alt="" />
               </div>
             </div>
@@ -255,7 +255,7 @@ const Slide = () => {
                       icon={faScroll}
                       style={{ marginRight: "0.5rem" }}
                     />
-                    <a href="/signup">Join us now</a>
+                    <a href="/signup">Join now</a>
                   </button>
                 </div>
                 <div className="socials">
@@ -297,7 +297,7 @@ const Slide = () => {
                       icon={faScroll}
                       style={{ marginRight: "0.5rem" }}
                     />
-                    <a href="/signup">Join us now</a>
+                    <a href="/signup">Join now</a>
                   </button>
                 </div>
                 <div className="socials">

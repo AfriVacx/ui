@@ -37,18 +37,6 @@
   height: 100%;
 }
 
-.slide2 {
-  height: 45rem;
-  color: black;
-  padding-top: 5rem;
-}
-
-.slide3 {
-  height: 45rem;
-  color: black;
-  padding-top: 5rem;
-}
-
 .liner {
   border-left: 1px solid white;
   margin: 0px 1rem;
@@ -229,6 +217,10 @@
   grid-gap: 2rem;
   width: 60%;
   padding: 2rem 0px;
+}
+
+.info_det{
+  text-align: justify;
 }
 
 .i {

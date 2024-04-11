@@ -86,7 +86,7 @@
   padding: 4rem 5rem 1rem;
 }
 
-.in{
+.in {
   margin-bottom: 5rem;
 }
 
@@ -96,12 +96,18 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.intro_img img{
+.intr {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.intro_img img {
   width: 80%;
   height: 80%;
 }
 
-.intro_details{
+.intro_details {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -418,12 +424,6 @@ div.afrivacx_board {
   background-color: white;
 }
 
-@media (min-width: 768px) {
-  .button_1 button {
-    padding: 16px 48px;
-  }
-}
-
 .button_2 button {
   border: none;
   margin: 0px;
@@ -644,4 +644,11 @@ div.afrivacx_board {
   flex-direction: column;
   align-items: center;
   margin-bottom: 4rem;
+}
+
+.loader {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -10,16 +10,16 @@ function ImageUpload() {
     cloudinaryRef.current = window.cloudinary;
     widgetRef.current = cloudinaryRef.current.createUploadWidget(
       {
-        cloudName: "muyi-hira-app",
-        uploadPreset: "dndkdt73",
+        cloudName: "dmzo3ogl5",
+        uploadPreset: "zvedo9a4",
       },
       (error, result) => {
-          if (result.info.files) {
-              setProfileImage(result.info.files)
+        if (result.info.files) {
+          setProfileImage(result.info.files);
         }
       }
     );
-  }, []);
+  }, [setProfileImage]);
   return (
     <div className="upload_image">
       <button onClick={() => widgetRef.current.open()}>Upload image</button>

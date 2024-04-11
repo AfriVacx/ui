@@ -32,7 +32,7 @@ function Intro() {
           </p>
         </div>
       </div>
-      <div className="intro">
+      <div className="intro intr">
         <div className="intro_details">
           <h4>Our Approach</h4>
           <p>

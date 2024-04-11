@@ -30,9 +30,9 @@ const Signup = () => {
   const [lgaList, setLgaList] = useState([]);
   const [load, setLoad] = useState(false);
   const [show, setShow] = useState(false);
-  const [show2, setShow2] = useState(false);
+  // const [show2, setShow2] = useState(false);
   const [type1, setType1] = useState(false);
-  const [type2, setType2] = useState(false);
+  // const [type2, setType2] = useState(false);
   const [message, setMessage] = useState("");
   const [err, setErr] = useState("");
   const [shows, setShows] = useState(false);
@@ -40,11 +40,23 @@ const Signup = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = () => {
-    if (firstName === "" && lastName === "" && email === "" && state === "") {
-      setShows(!shows);
+    if (
+      firstName === "" &&
+      lastName === "" &&
+      email === "" &&
+      state === "" &&
+      phoneNumber === "" &&
+      position === "" &&
+      title === "" &&
+      lga === "" &&
+      password === "" &&
+      profileImage.length < 1 &&
+      zone === ""
+    ) {
+      setShows(!show);
     } else {
-      // setLoad(!load);
-      fetch("http://127.0.0.1:8000/auth/signup", {
+      setLoad(!load);
+      fetch("https://afrivacx-server.vercel.app/auth/board", {
         method: "POST",
         body: JSON.stringify({
           firstName,
@@ -64,7 +76,7 @@ const Signup = () => {
         },
       })
         .then((response) => {
-          // setLoad(!load);
+          setLoad(!load);
           return response.json();
         })
         .then((res) => {
@@ -86,6 +98,7 @@ const Signup = () => {
             setPosition("");
             setLoad(!load);
             setShow(!show);
+            setErrorMessage("");
           }
         })
         // .then(() => {
@@ -206,17 +219,6 @@ const Signup = () => {
                     <FontAwesomeIcon icon={faEnvelope} />
                   </InputGroup.Text>
                 </InputGroup>
-                <InputGroup className="mb-3">
-                  <Form.Control
-                    placeholder="Phone Number"
-                    aria-label="phone number"
-                    aria-describedby="basic-addon1"
-                    type="text"
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    required
-                  />
-                </InputGroup>
                 <InputGroup>
                   {errorMessage === "" ? null : (
                     <i
@@ -248,6 +250,17 @@ const Signup = () => {
                   >
                     <FontAwesomeIcon icon={faEye} />
                   </InputGroup.Text>
+                </InputGroup>
+                <InputGroup className="mb-3">
+                  <Form.Control
+                    placeholder="Phone Number"
+                    aria-label="phone number"
+                    aria-describedby="basic-addon1"
+                    type="text"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    required
+                  />
                 </InputGroup>
                 <InputGroup className="mb-3">
                   <Form.Control
