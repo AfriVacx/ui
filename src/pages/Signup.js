@@ -280,12 +280,12 @@ const Signup = () => {
                     onChange={(e) => setZone(e.target.value)}
                   >
                     <option>Zone</option>
-                    <option value="north east">NorthEast</option>
-                    <option value="south east">SouthEast</option>
-                    <option value="north west">NorthWest</option>
-                    <option value="south west">SouthWest</option>
-                    <option value="north central">North Central</option>
-                    <option value="south south">South South</option>
+                    <option value="north_east">NorthEast</option>
+                    <option value="south_east">SouthEast</option>
+                    <option value="north_west">NorthWest</option>
+                    <option value="south_west">SouthWest</option>
+                    <option value="north_central">North Central</option>
+                    <option value="south_south">South South</option>
                   </Form.Select>
                 </InputGroup>
                 <InputGroup className="mb-3">

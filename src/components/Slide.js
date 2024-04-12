@@ -204,7 +204,7 @@ const Slide = () => {
               <div className="conten">
                 <div className="con">
                   <h1>
-                    Welcome to <b>Afri</b>Vacx
+                    Welcome to<br /><b>Afri</b>Vacx Health Aid Foundation
                   </h1>
                   <p>Bridging the gap, saving lifes</p>
                 </div>
