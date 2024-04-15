@@ -56,7 +56,7 @@ const Signup = () => {
       setShows(!show);
     } else {
       setLoad(!load);
-      fetch("https://afrivacx-server.vercel.app/auth/board", {
+      fetch("https://afrivacx-server.vercel.app/auth/signup", {
         method: "POST",
         body: JSON.stringify({
           firstName,
