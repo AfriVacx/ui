@@ -1,12 +1,13 @@
-import React, {useState} from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Header from "../components/Header";
-import Banner from "../components/Banner";
 
 import QuickLinks from "../components/QuickLinks";
 import Footer from "../components/Footer";
 
 import Board from "../components/Board";
-import boardData from "../data/boardData"
+import boardData from "../data/boardData";
+
+import { ValueContext } from "../Context";
 
 const Faqs = () => {
   const [detail1, setDetail1] = useState(true);
@@ -15,11 +16,19 @@ const Faqs = () => {
   const [detail4, setDetail4] = useState(false);
   const [detail5, setDetail5] = useState(false);
   const [detail6, setDetail6] = useState(false);
+  const { board, setBoard } = useContext(ValueContext);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/auth/board")
+      .then((response) => response.json())
+      .then((json) => setBoard(json.users))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <>
       <Header title="BOARD" a="/board" />
       <div className="board">
-        <Board members={boardData} title="National Board" />
+        <Board members={board} title="National Board" />
         <div className="about">
           <div className="about_tabs">
             <div
@@ -100,12 +109,12 @@ const Faqs = () => {
             </div>
           </div>
         </div>
-        {detail1 && <Board members={boardData} title="North East Zone" />}
-        {detail2 && <Board members={boardData} title="South East Zone" />}
-        {detail3 && <Board members={boardData} title="North West Zone" />}
-        {detail4 && <Board members={boardData} title="South West Zone" />}
-        {detail5 && <Board members={boardData} title="North Zone" />}
-        {detail6 && <Board members={boardData} title="South Zone" />}
+        {detail1 && <Board members={board} title="North East Zone" />}
+        {detail2 && <Board members={board} title="South East Zone" />}
+        {detail3 && <Board members={board} title="North West Zone" />}
+        {detail4 && <Board members={board} title="South West Zone" />}
+        {detail5 && <Board members={board} title="North Zone" />}
+        {detail6 && <Board members={board} title="South Zone" />}
       </div>
       <QuickLinks />
       <Footer />

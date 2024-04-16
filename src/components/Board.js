@@ -1,6 +1,6 @@
 import React from "react";
 
-function Board({members, title}) {
+function Board({ members, title }) {
   return (
     <div className="af">
       <div className="board_title">
@@ -9,9 +9,11 @@ function Board({members, title}) {
       <div className="afrivacx_board">
         {members.map((member, i) => (
           <div className="member" key={i}>
-              <img src={member.picture} alt="member" width={230} height={260} />
-            <p>{member.name}</p>
-            <h4>{member.position}</h4>
+            <img src={member.profileImage} alt="member" />
+            <p>
+              <b>{member.details.title}.</b> {member.fullName}
+            </p>
+            <h4>{member.details.position}</h4>
           </div>
         ))}
       </div>

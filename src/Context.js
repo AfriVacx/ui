@@ -9,6 +9,7 @@ class Context extends Component {
     password: "",
     isChecked: false,
     profileImage: [],
+    board: [],
   };
 
   componentDidMount() {
@@ -55,6 +56,8 @@ class Context extends Component {
 
   setProfileImage = (e) => this.setState({ profileImage: e });
 
+  setBoard = (e) => this.setState({ board: e });
+
   render() {
     return (
       <ValueContext.Provider
@@ -65,6 +68,7 @@ class Context extends Component {
           onChangeCheckbox: this.onChangeCheckbox,
           loginSubmit: this.loginSubmit,
           setProfileImage: this.setProfileImage,
+          setBoard: this.setBoard,
         }}
       >
         {this.props.children}

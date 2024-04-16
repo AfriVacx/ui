@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Slide from "../components/Slide";
 import QuickLinks from "../components/QuickLinks";
 import Footer from "../components/Footer";
@@ -7,10 +7,19 @@ import Video from "../components/Video";
 import Info from "../components/Info";
 import Board from "../components/Board";
 
-import boardData from "../data/boardData";
 import OurEvents from "../components/OurEvents";
 
+import { ValueContext } from "../Context";
+
 const Home = () => {
+  const { board, setBoard } = useContext(ValueContext);
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/auth/board")
+      .then((response) => response.json())
+      .then((json) => setBoard(json.users))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <Slide />
@@ -18,7 +27,7 @@ const Home = () => {
         <Intro />
         <Info />
         <Video />
-        <Board members={boardData} title="Meet the Afrivacx Board" />
+        <Board members={board} title="Meet the Afrivacx Board" />
         <OurEvents />
         <div className="join_u">
           <div className="join">
