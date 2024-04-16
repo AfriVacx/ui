@@ -19,7 +19,7 @@ const Faqs = () => {
   const { board, setBoard } = useContext(ValueContext);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/auth/board")
+    fetch("https://afrivacx-server.vercel.app/auth/board")
       .then((response) => response.json())
       .then((json) => setBoard(json.users))
       .catch((err) => console.log(err));
